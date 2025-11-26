@@ -7,7 +7,14 @@ $conn = $db->getConnection();
 $model = new RestoranModel($conn);
 
 // Ambil semua kategori
-$kategori = $model->getAllKategori();
+try {
+    $stmt = $conn->prepare("SELECT * FROM kategori");
+    $stmt->execute();
+    $kategori = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    // Jika tabel kategori tidak ada atau terjadi error, gunakan array kosong
+    $kategori = [];
+}
 
 // Cek apakah ada filter kategori dari query string
 $id_kategori = $_GET['kategori'] ?? null;
