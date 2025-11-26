@@ -4,7 +4,7 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Sistem Manajemen Restoran</title> 
-    <link rel="stylesheet" href="/BASDAT/css/style.css"> 
+    <link rel="stylesheet" href="../basdat_project/css/style.css"> 
 </head> 
 <body> 
     <div class="container"> 
@@ -21,3 +21,5 @@
         </nav> 
  
         <main class="main-content">
+    </div>
+</body>

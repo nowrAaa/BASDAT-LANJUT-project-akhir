@@ -72,6 +72,28 @@ public function getMenuById($id){
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+        // Kategori menu
+        public function getAllKategori(){
+            $stmt = $this->conn->prepare("SELECT * FROM kategori_menu ORDER BY nama_kategori ASC");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+    
+        // Ambil menu berdasarkan kategori
+        public function getMenuByKategori($id_kategori){
+            $stmt = $this->conn->prepare("
+                SELECT m.*, km.nama_kategori 
+                FROM menu m
+                JOIN kategori_menu km ON m.id_kategori = km.id_kategori
+                WHERE m.id_kategori = :id_kategori
+                ORDER BY m.nama_menu ASC
+            ");
+            $stmt->bindParam(':id_kategori', $id_kategori);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+
     // --- MEJA ---
     public function getAllMeja(){
         $stmt = $this->conn->prepare("SELECT * FROM meja ORDER BY id_meja ASC");
@@ -187,4 +209,6 @@ public function getMenuById($id){
         return $stmt->execute();
     }
 }
+
+
 ?>
