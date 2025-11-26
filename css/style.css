@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     color: #333;
+    line-height: 1.6; 
 }
 
 header {
@@ -30,6 +31,8 @@ nav {
     color: white;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -38,6 +41,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: opacity 0.2s ease;
+    padding: 5px 0;
 }
 
 nav a:hover {
@@ -49,6 +53,7 @@ nav a:hover {
     padding: 2rem;
     max-width: 1200px;
     margin: auto;
+    width: 100%; 
 }
 
 /* DASHBOARD CARDS */
@@ -78,18 +83,16 @@ nav a:hover {
 
 /* TABLE */
 table {
+    overflow-x: auto;
     width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
     margin-top: 1.5rem;
+    border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 th, td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #eee;
+    padding: 12px 15px;
+    border: 1px solid #ddd; 
     text-align: left;
 }
 
@@ -97,12 +100,35 @@ th {
     background: #093253;
     color: white;
     font-weight: bold;
+    border-color: #093253;
 }
 
 tr:hover td {
     background: #fff5e6;
 }
 
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem; 
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin-right: 0;
+        margin-bottom: 0.8rem; 
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .container {
+        padding: 1rem; 
+    }
+}
 /* BUTTON */
 .btn {
     padding: 0.4rem 1rem;

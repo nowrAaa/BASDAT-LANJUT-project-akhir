@@ -11,7 +11,7 @@ $menuStats = $model->getMenuStatistics();
 ?>
 
 <?php include 'header.php'; ?>
-
+<br>
 <h2>Laporan Menu</h2>
 <div class="dashboard-cards">
     <div class="card">Total Menu<br><?= $menuStats['total_menu'] ?></div>
