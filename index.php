@@ -13,7 +13,7 @@ $allMeja = $model->getAllMeja();
 ?>
 
 <?php include 'views/header.php'; ?>
-<br>
+
 <h2>Dashboard Restoran</h2>
 
 <div class="dashboard-cards">
@@ -30,7 +30,7 @@ $allMeja = $model->getAllMeja();
         <div class="number"><?= count($allMeja) ?></div>
     </div>
 </div>
-<br>
+
 <h3>Ringkasan Menu</h3>
 <table>
     <thead>
@@ -56,7 +56,7 @@ $allMeja = $model->getAllMeja();
         <?php endforeach; ?>
     </tbody>
 </table>
-<br>
+
 <h3>Ringkasan Pesanan Terakhir</h3>
 <table>
     <thead>
